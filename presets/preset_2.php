@@ -10,9 +10,7 @@
         border-color: <?php echo $form_options['secondary_color'] ?> !important;
     }
 
-    .free-quote-form .input-group .form-control {
-        border-left: 1px solid #ddd !important;
-    }
+
 
     .free-quote-form .btn-primary {
         border-radius: 4px;
