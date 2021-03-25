@@ -31,11 +31,12 @@
         text-transform: unset;
     }
 
-    .steps-wrapper {
+    /* .steps-wrapper {
         min-height: 150px;
-    }
+    } */
 
     #free-quote {
+        min-height: 150px;
         margin-top: 50px;
     }
 
@@ -48,16 +49,27 @@
     .free-quote-form .select2-container {
         flex: 1;
     }
+    .free-quote-form .input-group {
+    margin-bottom: 0;
+}
+@media(max-width:1200px) {
+    .free-quote-form .input-group {
+    margin-bottom: 3em;
+}
+.free-quote-form #nextFormStep {
+    margin-bottom: 3em !important;
+}
 
+}
+    .free-quote-form .form-row {
+        align-items: center;
+    }
+    .free-quote-form .steps-wrapper {
+        overflow: hidden;
+    }
 
     <?php
-    if ($form_options['form_border_radius'] != '' && $form_options['form_border_radius'] != null) {
-        echo '.free-quote-form{border-radius: ' . $form_options['form_border_radius'] . ' !important}';
-    }
-
-    if ($form_options['button_border_radius'] != '' && $form_options['button_border_radius'] != null) {
-        echo '.free-quote-form .btn-primary {border-radius: ' . $form_options['button_border_radius'] . ' !important}';
-    }
+    include ('variable/preset_css_inject.php');
     ?>
 </style>
 
@@ -76,7 +88,7 @@
         <div class="steps-wrapper">
             <div class="steps-inner-wrapper">
                 <div class="form-row step1 form-step">
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-sm-12">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -85,7 +97,7 @@
                             <div class="invalid-feedback" for="first_name"></div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-sm-12">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-location-arrow"></i></span>
@@ -94,7 +106,7 @@
                             <div class="invalid-feedback" for="source_zip"></div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-sm-12">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-location-arrow"></i></span>
@@ -103,7 +115,7 @@
                             <div class="invalid-feedback" for="destination_zip"></div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-sm-12">
                         <button id="nextFormStep" type="button" class="btn btn-primary m-auto w-100">Get a free quote</button>
                     </div>
                 </div>
@@ -111,7 +123,7 @@
                     <div class="col-12 pb-2">
                         <a href="#" id="goBackFormStep" style="color: <?php echo $form_options['primary_color'] ?>">Back</a>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-12 col-lg-3">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
@@ -121,7 +133,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-md-2">
+                    <div class="col-sm-12 col-lg-2">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
@@ -133,7 +145,7 @@
 
 
 
-                    <div class="col-sm-6 col-md-2">
+                    <div class="col-sm-12 col-lg-2">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
@@ -143,7 +155,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-12 col-lg-3">
                         <div class="input-group">
                             <select class="form-control selectpicker required" name="move_size_id" id="move_size_id" required placeholder="Size Of Move*">
                                 <option value="default">Size Of Move*</option>
@@ -163,7 +175,7 @@
                             <div class="invalid-feedback" for="move_size_id"></div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-2">
+                    <div class="col-sm-12 col-lg-2">
                         <button type="submit" class="btn btn-primary m-auto w-100"><?php echo $form_options['send_bitton_text'] ?></button>
                     </div>
                 </div>

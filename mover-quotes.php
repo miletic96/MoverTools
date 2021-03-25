@@ -3,7 +3,7 @@
 /**
 * Plugin Name: Mover Quotes
 * Description: Create forms for moving services easy
-* Version: 1.2.0
+* Version: 1.2.1
 * Author: Milan Miletic
 * License:           GNU General Public License v2
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,7 +32,10 @@ function movers_free_quote_page(){
             'form_header_text' => $_POST['form_header_text'],
             'primary_color' => $_POST['primary_color'],
             'secondary_color' => $_POST['secondary_color'],
-            'background_color' => $_POST['background_color'],
+            'first_background_color' => $_POST['first_background_color'],
+            'second_background_color' => $_POST['second_background_color'],
+            'first_input_color' => $_POST['first_input_color'],
+            'second_input_color' => $_POST['second_input_color'],
             'form_preset' => $_POST['form_preset'],
             'form_preset2' => $_POST['form_preset2'],
             'send_bitton_text' => $_POST['send_bitton_text'],
@@ -55,7 +58,10 @@ function movers_free_quote_page(){
             'form_header_text' => '',
             'primary_color' => '',
             'secondary_color' => '',
-            'background_color' => '',
+            'first_background_color' => '',
+            'second_background_color' => '',
+            'first_input_color' => '',
+            'second_input_color' => '',
             'form_preset' => '',
             'form_preset2' => '',
             'send_bitton_text' => '',
@@ -82,21 +88,27 @@ function generate_free_quote_form() {
     switch($form_options['form_preset']){
         case 0:
             include 'presets/preset_0.php';
+            include 'presets/variable/first_form_class.php';
             break;
         case 1:
             include 'presets/preset_1.php';
+            include 'presets/variable/first_form_class.php';
             break;
         case 2:
             include 'presets/preset_2.php';
+            include 'presets/variable/first_form_class.php';
             break;
         case 3:
             include 'presets/preset_3.php';
+            include 'presets/variable/first_form_class.php';
             break;
         case 4:
             include 'presets/preset_4.php';
+            include 'presets/variable/first_form_class.php';
             break;
         default:
             include 'presets/preset_1.php';
+            include 'presets/variable/first_form_class.php';
             break;
     }
 
@@ -115,27 +127,35 @@ function generate_free_quote_form2() {
     switch($form_options['form_preset2']){
         case 0:
             include 'presets/preset_0.php';
+            include 'presets/variable/second_form_class.php';
             break;
         case 1:
             include 'presets/preset_1.php';
+            include 'presets/variable/second_form_class.php';
             break;
         case 2:
             include 'presets/preset_2.php';
+            include 'presets/variable/second_form_class.php';
             break;
         case 3:
             include 'presets/preset_3.php';
+            include 'presets/variable/second_form_class.php';
             break;
         case 4:
             include 'presets/preset_4.php';
+            include 'presets/variable/second_form_class.php';
             break;
         case 5:
             include 'presets/preset_5.php';
+            include 'presets/variable/second_form_class.php';
             break;
         case 6:
             include 'presets/preset_6.php';
+            include 'presets/variable/second_form_class.php';
             break;
         default:
             include 'presets/preset_1.php';
+            include 'presets/variable/second_form_class.php';
             break;
     }
 

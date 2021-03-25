@@ -1,6 +1,7 @@
 .free-quote-form {
   background-color: #fff;
   padding: 15px 0;
+	display: grid;
 }
 
 .steps-wrapper {

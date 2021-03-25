@@ -31,17 +31,9 @@
 
 
     <?php
-    if ($form_options['form_border_radius'] != '' && $form_options['form_border_radius'] != null) {
-        echo '.free-quote-form{border-radius: ' . $form_options['form_border_radius'] . ' !important}';
-    }
-
-    if ($form_options['button_border_radius'] != '' && $form_options['button_border_radius'] != null) {
-        echo '.free-quote-form .btn-primary {border-radius: ' . $form_options['button_border_radius'] . ' !important}';
-    }
-
-    if ($form_options['background_color'] != '' && $form_options['background_color'] != null) {
-        echo '#free-quote { background-color: rgb(' . $form_options['background_color'] . ') !important}';
-    }
+    include ('variable/preset_css_inject.php');
+    
+    
 
     ?>
 </style>
