@@ -1,13 +1,12 @@
 .free-quote-form {
   background-color: #fff;
   padding: 15px 0;
-	display: grid;
+  display: grid;
 }
 
 .steps-wrapper {
   overflow-x: hidden;
   min-height: 85px;
-  
 }
 
 .steps-inner-wrapper {
@@ -97,4 +96,9 @@
 .free-quote-form .input-group {
   height: 3em;
   margin-bottom: 2em;
+}
+.free-quote-form .form_header {
+  font-size: 1.5em !important;
+  font-weight: bolder !important;
+  text-align: center;
 }

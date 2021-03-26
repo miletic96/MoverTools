@@ -40,7 +40,7 @@
     
     <form id="free-quote-form" class="preset-0 col" quote-redirect="<?php echo $form_options['redirect_url'] ?>">
         <?php if ($form_options['form_header_text'] != null && $form_options['form_header_text'] != '') { ?>
-            <div class="form-row mb-3">
+            <div class="form-row mb-3 form_header">
                 <div class="col-12 text-center"><?php echo $form_options['form_header_text'] ?></div>
             </div>
         <?php } ?>
