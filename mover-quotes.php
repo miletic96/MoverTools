@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Mover Quotes
  * Description: Create forms for moving services easy
- * Version: 1.2.3
+ * Version: 1.2.4
  * Author: Milan Miletic
  * License:           GNU General Public License v2
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
