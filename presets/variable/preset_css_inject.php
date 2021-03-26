@@ -28,7 +28,10 @@ if ($form_options['second_input_color'] != '' && $form_options['second_input_col
     echo '.second_form  .select2-container--default .select2-selection--single { background-color: rgb(' . $form_options['first_input_color'] . ') !important}';
 }
 
+if ($form_options['custom_css'] != '' && $form_options['custom_css'] != null) {
+    echo $form_options['custom_css'];
 
+}
 
 
 ?>

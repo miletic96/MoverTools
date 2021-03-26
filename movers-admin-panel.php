@@ -159,6 +159,11 @@
                 
                 </table>
         </div>
+
+        <div> 
+        <textarea name="custom_css" id="custom_css" cols="100" rows="10"><?php echo $form_options['custom_css'] ?></textarea>
+        
+        </div>
         <input type="submit" name="submit" id="submit" class="button button-primary" value="Save">
     </form>
 </div>
