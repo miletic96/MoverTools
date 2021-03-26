@@ -25,7 +25,9 @@
     .free-quote-form .select2-container {
         flex: 1;
     }
-
+    .free-quote-form #free-quote-form .form-row .form-control{
+        border-left: 1px solid;
+    }
 
     <?php
     include ('variable/preset_css_inject.php');

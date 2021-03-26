@@ -1,7 +1,7 @@
 <?php
 echo '
 <script>
-    $("#free-quote").addClass("second_form");
+    jQuery("#free-quote").addClass("second_form");
 </script>
 '
 ?>
