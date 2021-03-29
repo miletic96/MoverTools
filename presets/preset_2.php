@@ -26,7 +26,7 @@
         flex: 1;
     }
     .free-quote-form #free-quote-form .form-row .form-control{
-        border-left: 1px solid;
+        border-left: 1px solid rgb(206, 212, 218) !important;
     }
 
     <?php
