@@ -25,21 +25,22 @@
     .free-quote-form .select2-container {
         flex: 1;
     }
-    .free-quote-form #free-quote-form .form-row .form-control{
+
+    .free-quote-form #free-quote-form .form-row .form-control {
         border-left: 1px solid rgb(206, 212, 218) !important;
     }
 
     <?php
-    include ('variable/preset_css_inject.php');
-    
-    
+    include('variable/preset_css_inject.php');
+
+
 
     ?>
 </style>
 
 <div id="free-quote" class="free-quote-form">
 
-<form>
+    <form>
         <input type="hidden" name="api_url" id="api_url" value="<?php echo $form_options['api_url'] ?>">
     </form>
 
@@ -109,16 +110,16 @@
                         <option value="default">Size Of Move*</option>
                         <option value="1">Studio</option>
                         <option value="2">1 Bedroom</option>
-                        <option value="5">2 Bedrooms</option>
-                        <option value="8">3 Bedrooms</option>
-                        <option value="10">4 Bedrooms</option>
-                        <option value="11">4+ Bedrooms</option>
-                        <option value="3">Small Office</option>
-                        <option value="6">Medium Office</option>
-                        <option value="12">Large Office</option>
-                        <option value="4">Small storage (5x5, 5x8, 5x10)</option>
-                        <option value="7">Medium storage (10x10, 10x15)</option>
-                        <option value="9">Large storage (10x20)</option>
+                        <option value="3">2 Bedrooms</option>
+                        <option value="4">3 Bedrooms</option>
+                        <option value="5">4 Bedrooms</option>
+                        <option value="6">4+ Bedrooms</option>
+                        <option value="7">Small Office</option>
+                        <option value="8">Medium Office</option>
+                        <option value="9">Large Office</option>
+                        <option value="10">Small storage (5x5, 5x8, 5x10)</option>
+                        <option value="11">Medium storage (10x10, 10x15)</option>
+                        <option value="12">Large storage (10x20)</option>
                     </select>
                     <div class="invalid-feedback" for="move_size_id"></div>
                 </div>

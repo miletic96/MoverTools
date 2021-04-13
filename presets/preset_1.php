@@ -42,7 +42,7 @@
 
 
     <?php
-    include ('variable/preset_css_inject.php');
+    include('variable/preset_css_inject.php');
     ?>
 </style>
 
@@ -127,16 +127,16 @@
                         <option value="default">Size Of Move*</option>
                         <option value="1">Studio</option>
                         <option value="2">1 Bedroom</option>
-                        <option value="5">2 Bedrooms</option>
-                        <option value="8">3 Bedrooms</option>
-                        <option value="10">4 Bedrooms</option>
-                        <option value="11">4+ Bedrooms</option>
-                        <option value="3">Small Office</option>
-                        <option value="6">Medium Office</option>
-                        <option value="12">Large Office</option>
-                        <option value="4">Small storage (5x5, 5x8, 5x10)</option>
-                        <option value="7">Medium storage (10x10, 10x15)</option>
-                        <option value="9">Large storage (10x20)</option>
+                        <option value="3">2 Bedrooms</option>
+                        <option value="4">3 Bedrooms</option>
+                        <option value="5">4 Bedrooms</option>
+                        <option value="6">4+ Bedrooms</option>
+                        <option value="7">Small Office</option>
+                        <option value="8">Medium Office</option>
+                        <option value="9">Large Office</option>
+                        <option value="10">Small storage (5x5, 5x8, 5x10)</option>
+                        <option value="11">Medium storage (10x10, 10x15)</option>
+                        <option value="12">Large storage (10x20)</option>
                     </select>
                     <div class="invalid-feedback" for="move_size_id"></div>
                 </div>
