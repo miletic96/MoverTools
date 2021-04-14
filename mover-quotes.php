@@ -9,6 +9,16 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
  **/
 
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/miletic96/MoversForms',
+	__FILE__,
+	'mover-quotes'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
 
 function movers_admin_menu_option()
 {
