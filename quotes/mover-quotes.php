@@ -1,25 +1,5 @@
 <?php
 
-/**
- * Plugin Name: Mover Quotes
- * Description: Create forms for moving services easy
- * Version: 1.3.5
- * Author: Milan Miletic
- * License:           GNU General Public License v2
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
- **/
-
-require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/miletic96/MoversForms',
-	__FILE__,
-	'mover-quotes'
-);
-
-//Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('master');
-
-
 function movers_admin_menu_option()
 {
     add_menu_page('movers free quote', 'Movers Forms', 'manage_options', 'movers-forms', 'movers_free_quote_page', '', 200);
@@ -87,11 +67,7 @@ function movers_free_quote_page()
     include 'movers-admin-panel.php';
 }
 
-function movers_form_install()
-{
-}
 
-register_activation_hook(__FILE__, 'movers_form_install');
 
 function generate_free_quote_form()
 {
@@ -183,10 +159,10 @@ add_shortcode('free-quote2', 'generate_free_quote_form2');
 
 function load_plugin_css()
 {
-    $plugin_url = plugin_dir_url(__FILE__);
-    wp_enqueue_style('bootstrap', $plugin_url . 'assets/css/bootstrap/bootstrap.min.css');
-    wp_enqueue_style('free-quote', $plugin_url . 'assets/css/movers-quote.css');
-    wp_enqueue_style('bootstrap-datepicker', $plugin_url . 'assets/css/bootstrap/datepicker/bootstrap-datepicker.min.css');
+    $quote_plugin_url = plugin_dir_url(__FILE__);
+    wp_enqueue_style('bootstrap', $quote_plugin_url . 'assets/css/bootstrap/bootstrap.min.css');
+    wp_enqueue_style('free-quote', $quote_plugin_url . 'assets/css/movers-quote.css');
+    wp_enqueue_style('bootstrap-datepicker', $quote_plugin_url . 'assets/css/bootstrap/datepicker/bootstrap-datepicker.min.css');
     wp_enqueue_style('bootstrap-selectpicker', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css');
 }
 add_action('wp_enqueue_scripts', 'load_plugin_css');
