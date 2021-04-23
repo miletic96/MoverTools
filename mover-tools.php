@@ -10,7 +10,7 @@
  **/
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/miletic96/MoversTools',
+	'https://github.com/miletic96/MoverTools',
 	__FILE__,
 	'mover-tools'
 );
