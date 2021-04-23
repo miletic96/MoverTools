@@ -3,14 +3,14 @@
 /**
  * Plugin Name: Mover Tools
  * Description: Create forms for moving services easy
- * Version: 1.3.6
+ * Version: 1.4.0
  * Author: Milan Miletic
  * License:           GNU General Public License v2
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
  **/
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/miletic96/MoversForms',
+	'https://github.com/miletic96/MoversTools',
 	__FILE__,
 	'mover-tools'
 );
