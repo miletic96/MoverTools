@@ -34,6 +34,7 @@ function movers_free_quote_page()
             'send_bitton_text' => $_POST['send_bitton_text'],
             'form_border_radius' => $_POST['form_border_radius'],
             'button_border_radius' => $_POST['button_border_radius'],
+            'loadbootstrap' => $_POST['loadbootstrap'],
         );
         update_option('movers_quote_options', $post_data);
         //$wpdb->update($table_name,$post_data, array( "id" => 1 ));
@@ -61,6 +62,7 @@ function movers_free_quote_page()
             'send_bitton_text' => '',
             'form_border_radius' => '',
             'button_border_radius' => '',
+            'loadbootstrap' => '',
         );
     }
 
@@ -76,35 +78,41 @@ function generate_free_quote_form()
         return 'free quote form options not set.';
 
     ob_start(); // start a buffer
-    switch ($form_options['form_preset']) {
-        case 0:
-            include 'presets/preset_0.php';
-            include 'presets/variable/first_form_class.php';
-            break;
-        case 1:
-            include 'presets/preset_1.php';
-            include 'presets/variable/first_form_class.php';
-            break;
-        case 2:
-            include 'presets/preset_2.php';
-            include 'presets/variable/first_form_class.php';
-            break;
-        case 3:
-            include 'presets/preset_3.php';
-            include 'presets/variable/first_form_class.php';
-            break;
-        case 4:
-            include 'presets/preset_4.php';
-            include 'presets/variable/first_form_class.php';
-            break;
-        case 5:
-            include 'presets/preset_5.php';
-            include 'presets/variable/first_form_class.php';
-            break;
-        default:
-            include 'presets/preset_1.php';
-            include 'presets/variable/first_form_class.php';
-            break;
+
+    if ($form_options['loadbootstrap'] == 1) {
+        switch ($form_options['form_preset']) {
+            case 0:
+                include 'presets/preset_0.php';
+                include 'presets/variable/first_form_class.php';
+                break;
+            case 1:
+                include 'presets/preset_1.php';
+                include 'presets/variable/first_form_class.php';
+                break;
+            case 2:
+                include 'presets/preset_2.php';
+                include 'presets/variable/first_form_class.php';
+                break;
+            case 3:
+                include 'presets/preset_3.php';
+                include 'presets/variable/first_form_class.php';
+                break;
+            case 4:
+                include 'presets/preset_4.php';
+                include 'presets/variable/first_form_class.php';
+                break;
+            case 5:
+                include 'presets/preset_5.php';
+                include 'presets/variable/first_form_class.php';
+                break;
+            default:
+                include 'presets/preset_1.php';
+                include 'presets/variable/first_form_class.php';
+                break;
+        }
+    } else {
+        include 'presets/preset_6.php';
+        include 'presets/variable/first_form_class.php';
     }
 
     $content = ob_get_clean(); // get the buffer contents and clean it
@@ -120,35 +128,42 @@ function generate_free_quote_form2()
         return 'free quote form options not set.';
 
     ob_start(); // start a buffer
-    switch ($form_options['form_preset2']) {
-        case 0:
-            include 'presets/preset_0.php';
-            include 'presets/variable/second_form_class.php';
-            break;
-        case 1:
-            include 'presets/preset_1.php';
-            include 'presets/variable/second_form_class.php';
-            break;
-        case 2:
-            include 'presets/preset_2.php';
-            include 'presets/variable/second_form_class.php';
-            break;
-        case 3:
-            include 'presets/preset_3.php';
-            include 'presets/variable/second_form_class.php';
-            break;
-        case 4:
-            include 'presets/preset_4.php';
-            include 'presets/variable/second_form_class.php';
-            break;
-        case 5:
-            include 'presets/preset_5.php';
-            include 'presets/variable/second_form_class.php';
-            break;
-        default:
-            include 'presets/preset_1.php';
-            include 'presets/variable/second_form_class.php';
-            break;
+
+
+    if ($form_options['loadbootstrap'] == 1) {
+        switch ($form_options['form_preset2']) {
+            case 0:
+                include 'presets/preset_0.php';
+                include 'presets/variable/second_form_class.php';
+                break;
+            case 1:
+                include 'presets/preset_1.php';
+                include 'presets/variable/second_form_class.php';
+                break;
+            case 2:
+                include 'presets/preset_2.php';
+                include 'presets/variable/second_form_class.php';
+                break;
+            case 3:
+                include 'presets/preset_3.php';
+                include 'presets/variable/second_form_class.php';
+                break;
+            case 4:
+                include 'presets/preset_4.php';
+                include 'presets/variable/second_form_class.php';
+                break;
+            case 5:
+                include 'presets/preset_5.php';
+                include 'presets/variable/second_form_class.php';
+                break;
+            default:
+                include 'presets/preset_1.php';
+                include 'presets/variable/second_form_class.php';
+                break;
+        }
+    } else {
+        include 'presets/preset_6.php';
+        include 'presets/variable/first_form_class.php';
     }
 
     $content = ob_get_clean(); // get the buffer contents and clean it
@@ -160,7 +175,13 @@ add_shortcode('free-quote2', 'generate_free_quote_form2');
 function load_plugin_css()
 {
     $quote_plugin_url = plugin_dir_url(__FILE__);
-    wp_enqueue_style('bootstrap', $quote_plugin_url . 'assets/css/bootstrap/bootstrap.min.css');
+    $form_options = get_option('movers_quote_options');
+
+
+    if ($form_options['loadbootstrap'] == 1) {
+        wp_enqueue_style('bootstrap', $quote_plugin_url . 'assets/css/bootstrap/bootstrap.min.css');
+    }
+
     wp_enqueue_style('free-quote', $quote_plugin_url . 'assets/css/movers-quote.css');
     wp_enqueue_style('bootstrap-datepicker', $quote_plugin_url . 'assets/css/bootstrap/datepicker/bootstrap-datepicker.min.css');
     wp_enqueue_style('bootstrap-selectpicker', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css');
