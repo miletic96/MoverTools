@@ -144,10 +144,8 @@
 
                 </tr>
                 <tr>
-                    <td>Load Boostrap</td>
-                    <td><input type="radio" name="loadbootstrap" id="loadbootstrap" value="1" checked="checked" <?php echo $form_options['loadbootstrap'] == 1 ? "checked" : ""  ?>></td>
-                    <td>DO NOT load Boostrap</td>
-                    <td><input type="radio" name="loadbootstrap" id="loadbootstrap" value="2" <?php echo $form_options['loadbootstrap'] == 2 ? "checked" : ""  ?>></td>
+                    <td>Skip Boostrap</td>
+                    <td><input type="checkbox" name="loadbootstrap" id="loadbootstrap" <?php echo $form_options['loadbootstrap'] == 1 ? "checked" : ""  ?>></td>
                 </tr>
 
                 </tbody>

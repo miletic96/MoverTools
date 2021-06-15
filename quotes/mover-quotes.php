@@ -34,7 +34,7 @@ function movers_free_quote_page()
             'send_bitton_text' => $_POST['send_bitton_text'],
             'form_border_radius' => $_POST['form_border_radius'],
             'button_border_radius' => $_POST['button_border_radius'],
-            'loadbootstrap' => $_POST['loadbootstrap'],
+            'loadbootstrap' => (isset($_POST['loadbootstrap']) ? '1' : '0'),
         );
         update_option('movers_quote_options', $post_data);
         //$wpdb->update($table_name,$post_data, array( "id" => 1 ));
@@ -62,7 +62,7 @@ function movers_free_quote_page()
             'send_bitton_text' => '',
             'form_border_radius' => '',
             'button_border_radius' => '',
-            'loadbootstrap' => '',
+            'loadbootstrap' => (isset($_POST['loadbootstrap']) ? '1' : '0'),
         );
     }
 
@@ -79,7 +79,7 @@ function generate_free_quote_form()
 
     ob_start(); // start a buffer
 
-    if ($form_options['loadbootstrap'] == 1) {
+    if ($form_options['loadbootstrap'] == 0) {
         switch ($form_options['form_preset']) {
             case 0:
                 include 'presets/preset_0.php';
@@ -130,7 +130,7 @@ function generate_free_quote_form2()
     ob_start(); // start a buffer
 
 
-    if ($form_options['loadbootstrap'] == 1) {
+    if ($form_options['loadbootstrap'] == 0) {
         switch ($form_options['form_preset2']) {
             case 0:
                 include 'presets/preset_0.php';
@@ -178,7 +178,7 @@ function load_plugin_css()
     $form_options = get_option('movers_quote_options');
 
 
-    if ($form_options['loadbootstrap'] == 1) {
+    if ($form_options['loadbootstrap'] == 0) {
         wp_enqueue_style('bootstrap', $quote_plugin_url . 'assets/css/bootstrap/bootstrap.min.css');
     }
 
